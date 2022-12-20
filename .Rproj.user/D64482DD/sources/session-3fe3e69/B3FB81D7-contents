@@ -1,0 +1,22 @@
+library(bugphyzz)
+library(taxPPro)
+
+h <- physiologies('habitat')[[1]]
+
+## Using NCBI_ID ####
+h_filtered1 <- preSteps(h, 'NCBI_ID', remove_false = TRUE)
+
+## Propagate with genus as max level
+
+h_prop_g_ids <- propagate(h_filtered1)
+
+## Propagate with family as max level
+
+## Using Taxon name ####
+
+h_filtered2 <- preSteps(h, 'Taxon_name', remove_false = TRUE)
+
+## Propagate with genus as max level
+
+## Propagate with family as max level
+

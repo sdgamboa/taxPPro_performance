@@ -1,0 +1,99 @@
+library(bugphyzz)
+library(taxPPro)
+h <- physiologies('habitat')[[1]]
+## Using NCBI_ID ####
+h_filtered1 <- preSteps(h, 'NCBI_ID', remove_false = TRUE)
+## Propagate with genus as max level
+h_prop_g_ids <- propagate(h_filtered1, 'family', remove_false = TRUE)
+## Propagate with genus as max level
+h_prop_g_ids_fname <- 'habitat_propagated_genus_ids.csv'
+getwd()
+library(bugphyzz)
+library(taxPPro)
+h <- physiologies('habitat')[[1]]
+## Using NCBI_ID ####
+h_filtered_ids_fname <- 'habitat_filtered_ids.csv'
+if (file.exists(h_filtered_ids_fname)) {
+h_filtered_ids_fname <- read.csv(h_filtered_ids_fname)
+} else {
+h_filtered_ids <- preSteps(h, 'NCBI_ID', remove_false = TRUE)
+write.csv(x = h_filtered_ids, file = h_filtered_ids_fname)
+}
+## Propagate with genus as max level
+h_prop_g_ids_fname <- 'habitat_propagated_genus_ids.csv'
+if (file.exists(h_prop_g_ids_fname)) {
+h_prop_g_ids <- read.csv(h_prop_g_ids_fname)
+} else {
+start_time <- Sys.time()
+h_prop_g_ids <- propagate(h_filtered_ids, 'genus', remove_false = TRUE)
+end_time <- Sys.time()
+elapsed_time <- end_time - start_time
+h_prop_g_ids$time <- elapsed_time
+h_prop_g_ids$data_type <- h_prop_g_ids
+write.csv(x = h_prop_g_ids, file = h_prop_g_ids_fname)
+}
+elpased_tiem
+elapsed_tieme
+elapsed_time
+as.POSIXlt.character(elapsed_time)
+as.POSIXlt(elapsed_time)
+as.POSIXct(elapsed_time)
+class(elpased_time)
+class(elapsed_time)
+as.character(elapsed_time)
+elapsed_time
+difftime(end_time, start_time)
+difftime(start_time, end_time)
+difftime(end_time, start_time)
+difftime(end_time, start_time, units = 'minutes')
+difftime(end_time, start_time, units = 'mins')
+difftime(end_time, start_time, units = 'secs')
+difftime(end_time, start_time, units = 'mins')
+as.character(difftime(end_time, start_time, units = 'mins'))
+if (file.exists(h_prop_g_ids_fname)) {
+h_prop_g_ids <- read.csv(h_prop_g_ids_fname)
+} else {
+start_time <- Sys.time()
+h_prop_g_ids <- propagate(h_filtered_ids, 'genus', remove_false = TRUE)
+end_time <- Sys.time()
+elapsed_time <-  difftime(end_time, start_time, units = 'mins')
+elapsed_time <- as.character(elapsed_time)
+h_prop_g_ids$time <- elapsed_time
+h_prop_g_ids$data_type <- h_prop_g_ids
+write.csv(x = h_prop_g_ids, file = h_prop_g_ids_fname)
+}
+elapsed_time
+## Propagate with genus as max level
+h_prop_g_ids_fname <- 'habitat_propagated_genus_ids.csv'
+if (file.exists(h_prop_g_ids_fname)) {
+h_prop_g_ids <- read.csv(h_prop_g_ids_fname)
+} else {
+start_time <- Sys.time()
+h_prop_g_ids <- propagate(h_filtered_ids, 'genus', remove_false = TRUE)
+end_time <- Sys.time()
+elapsed_time <-  difftime(end_time, start_time, units = 'mins')
+elapsed_time <- as.character(elapsed_time)
+h_prop_g_ids$time <- elapsed_time
+h_prop_g_ids$data_type <- h_prop_g_ids
+write.csv(x = h_prop_g_ids, file = h_prop_g_ids_fname)
+}
+elapsed_time <-  difftime(end_time, start_time, units = 'mins')
+elapsed_time
+round(elapsed_time, 2)
+round(elapsed_time, 1)
+## Propagate with genus as max level
+h_prop_g_ids_fname <- 'habitat_propagated_genus_ids.csv'
+if (file.exists(h_prop_g_ids_fname)) {
+h_prop_g_ids <- read.csv(h_prop_g_ids_fname)
+} else {
+start_time <- Sys.time()
+h_prop_g_ids <- propagate(h_filtered_ids, 'genus', remove_false = TRUE)
+end_time <- Sys.time()
+elapsed_time <-  round(difftime(end_time, start_time, units = 'mins'), 1)
+elapsed_time <- as.character(elapsed_time)
+h_prop_g_ids$time <- elapsed_time
+h_prop_g_ids$data_type <- h_prop_g_ids
+write.csv(x = h_prop_g_ids, file = h_prop_g_ids_fname)
+}
+dim(h_prop_g_ids)
+h_prop_g_ids
